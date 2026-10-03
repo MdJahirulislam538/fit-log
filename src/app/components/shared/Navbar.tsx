@@ -35,7 +35,7 @@ const Navbar = () => {
                     </Link>
 
                     <Link
-                        href="/my-plan"
+                        href="/myplan"
                         className="rounded-full px-4 py-1.5 text-[11px] font-medium text-[#92949a] transition-all hover:text-white"
                     >
                         My Plan
