@@ -89,19 +89,19 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
         <div className="mb-7 rounded-2xl border border-[#242932] bg-[#13161c] px-5 py-7">
           <div className="grid grid-cols-1 md:grid-cols-3">
             <div className="border-b border-[#242932] pb-5 md:border-b-0 md:border-r md:pb-0">
-              <p className="text-[11px] text-[#8b929d]">Exercises</p>
+              <p className="text-[14px] text-[#8b929d]">Exercises</p>
               <p className="mt-1 text-3xl font-bold text-[#c4ff00]">
                 {stats.exercises}
               </p>
             </div>
 
             <div className="border-b border-[#242932] px-0 pb-5 pt-5 md:border-b-0 md:border-r md:px-7 md:py-0">
-              <p className="text-[11px] text-[#8b929d]">Minutes</p>
+              <p className="text-[14px] text-[#8b929d]">Minutes</p>
               <p className="mt-1 text-3xl font-bold">{stats.minutes}</p>
             </div>
 
             <div className="pt-5 md:px-7 md:py-0">
-              <p className="text-[11px] text-[#8b929d]">Calories</p>
+              <p className="text-[14px] text-[#8b929d]">Calories</p>
               <p className="mt-1 text-3xl font-bold">{stats.calories}</p>
             </div>
           </div>
@@ -113,7 +113,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
             <button
               type="button"
               onClick={() => setActiveTab("today")}
-              className={`rounded-lg px-4 text-[11px] ${
+              className={`rounded-lg px-4 text-[14px] ${
                 activeTab === "today"
                   ? "bg-[#222730] text-white"
                   : "text-[#8b929d]"
@@ -125,7 +125,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
             <button
               type="button"
               onClick={() => setActiveTab("saved")}
-              className={`rounded-lg px-5 text-[11px] ${
+              className={`rounded-lg px-5 text-[14px] ${
                 activeTab === "saved"
                   ? "bg-[#222730] text-white"
                   : "text-[#8b929d]"
@@ -136,12 +136,12 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[11px] text-[#858c97]">Sort By</span>
+            <span className="text-[14px] text-[#858c97]">Sort By</span>
 
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="h-[31px] rounded-lg border border-[#2a2f38] bg-[#14171c] px-3 text-[11px] text-white outline-none"
+              className="h-[31px] rounded-lg border border-[#2a2f38] bg-[#14171c] px-3 text-[14px] text-white outline-none"
             >
               <option value="duration">Duration</option>
               <option value="calories">Calories</option>
@@ -157,7 +157,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
                 Nothing Here Yet
               </h2>
 
-              <p className="mt-1 text-[11px] text-[#858c97]">
+              <p className="mt-1 text-[14px] text-[#858c97]">
                 {activeTab === "today"
                   ? "Browse the library and add a lift to get today moving."
                   : "Save a workout to keep it for later and come back to it anytime."}
@@ -165,7 +165,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
               <button
                 type="button"
-                className="mt-5 rounded-full bg-[#c4ff00] cursor-pointer px-6 py-2.5 text-[11px] font-bold text-black"
+                className="mt-5 rounded-full bg-[#c4ff00] cursor-pointer px-6 py-2.5 text-[12px] font-bold text-black"
                 onClick={() => router.push("/workouts")}
               >
                 Go to workouts
@@ -192,11 +192,11 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
                     {workout.name}
                   </h3>
 
-                  <p className="mt-0.5 text-[10px] text-[#858c97]">
+                  <p className="mt-0.5 text-[12px] text-[#858c97]">
                     {workout.equipment ?? "Workout"}
                   </p>
 
-                  <div className="mt-2 flex items-center gap-3 text-[10px] text-[#a4aab3]">
+                  <div className="mt-2 flex items-center gap-3 text-[12px] text-[#a4aab3]">
                     <span className="flex items-center gap-1">
                       <span className="text-[#c4ff00]">◷</span>
                       {workout.duration} min
@@ -217,7 +217,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
                 <div className="flex shrink-0 items-center gap-3">
                   <button
                     type="button"
-                    className="h-8 rounded-full cursor-pointer border border-[#303744] px-4 text-[10px] text-white transition hover:bg-[#20252d]"
+                    className="h-8 rounded-full cursor-pointer border border-[#303744] px-4 text-[12px] text-white transition hover:bg-[#20252d]"
                     onClick={() => router.push(`/workouts/${workout.id}`)}
                   >
                     View Details
@@ -225,7 +225,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
                   <button
                     type="button"
-                    className="flex h-8 items-center gap-1.5 rounded-full cursor-pointer bg-[#c4ff00] px-4 text-[10px] font-bold text-black transition hover:bg-[#d1ff33]"
+                    className="flex h-8 items-center gap-1.5 rounded-full cursor-pointer bg-[#c4ff00] px-4 text-[12px] font-bold text-black transition hover:bg-[#d1ff33]"
                   >
                     <span>✓</span>
                     Mark as Done

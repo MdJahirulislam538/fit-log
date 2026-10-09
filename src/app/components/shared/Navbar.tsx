@@ -21,7 +21,7 @@ const Navbar = () => {
     const isActive = (href: string) => pathname === href;
 
     const linkClass = (href: string) =>
-        `block rounded-lg px-4 py-2 text-sm font-medium transition-colors md:rounded-full md:py-1.5 md:text-[11px] ${
+        `block rounded-lg px-4 py-2 text-sm font-medium transition-colors md:rounded-full md:py-1.5 md:text-[14px] ${
             isActive(href)
                 ? "bg-[#17250d] text-[#b6ff00]"
                 : "text-[#a3a5aa] hover:bg-[#202226] hover:text-white"
@@ -31,7 +31,7 @@ const Navbar = () => {
 
     return (
         <header className="sticky top-0 z-50 border-b border-[#1d1e21] bg-[#0d0e10]">
-            <nav className="mx-auto flex min-h-[68px] max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+            <nav className="mx-auto flex min-h-[68px] max-w-[1360px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-0">
 
                 {/* Logo */}
                 <Link
@@ -70,16 +70,16 @@ const Navbar = () => {
 
                 {/* Desktop Plan & Saved */}
                 <div className="hidden shrink-0 items-center gap-4 lg:flex">
-                    <div className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white">
+                    <div className="flex items-center gap-2 text-[14px] font-medium text-[#b7b8bc] transition hover:text-white">
                         <span>Plan</span>
-                        <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-[#b6ff00] px-1 text-[9px] font-bold text-black">
+                        <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-[#b6ff00] px-1 text-[12px] font-bold text-black">
                             {myPlan.length}
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white">
+                    <div className="flex items-center gap-2 text-[14px] font-medium text-[#b7b8bc] transition hover:text-white">
                         <span>Saved</span>
-                        <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full border border-[#35383d] px-1 text-[9px] text-[#9b9da2]">
+                        <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full border border-[#35383d] px-1 text-[12px] text-[#9b9da2]">
                             {savedWorkouts.length}
                         </span>
                     </div>

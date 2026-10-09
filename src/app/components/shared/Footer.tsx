@@ -28,7 +28,7 @@ const Footer = () => {
 
 
                 {/* Copyright */}
-                <p className="text-right text-[11px] leading-5 text-[#686d77]">
+                <p className="text-right text-[14px] leading-5 text-[#686d77]">
                     © 2026 FitLog — Workout Library. Train hard, log honest.
                 </p>
 
