@@ -75,7 +75,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
   return (
     <div className="min-h-screen bg-[#0d0f12] px-6 py-8 text-white">
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-[1360px]">
         {/* ================= HEADER ================= */}
         <div className="mb-5">
           <h1 className="text-2xl font-extrabold uppercase">My Plan</h1>
@@ -165,7 +165,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
               <button
                 type="button"
-                className="mt-5 rounded-full bg-[#c4ff00] px-6 py-2.5 text-[11px] font-bold text-black"
+                className="mt-5 rounded-full bg-[#c4ff00] cursor-pointer px-6 py-2.5 text-[11px] font-bold text-black"
                 onClick={() => router.push("/workouts")}
               >
                 Go to workouts
@@ -217,7 +217,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
                 <div className="flex shrink-0 items-center gap-3">
                   <button
                     type="button"
-                    className="h-8 rounded-full border border-[#303744] px-4 text-[10px] text-white transition hover:bg-[#20252d]"
+                    className="h-8 rounded-full cursor-pointer border border-[#303744] px-4 text-[10px] text-white transition hover:bg-[#20252d]"
                     onClick={() => router.push(`/workouts/${workout.id}`)}
                   >
                     View Details
@@ -225,7 +225,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
                   <button
                     type="button"
-                    className="flex h-8 items-center gap-1.5 rounded-full bg-[#c4ff00] px-4 text-[10px] font-bold text-black transition hover:bg-[#d1ff33]"
+                    className="flex h-8 items-center gap-1.5 rounded-full cursor-pointer bg-[#c4ff00] px-4 text-[10px] font-bold text-black transition hover:bg-[#d1ff33]"
                   >
                     <span>✓</span>
                     Mark as Done
@@ -233,7 +233,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
                   <button
                     type="button"
-                    className="ml-1 text-lg leading-none text-[#69717c] transition hover:text-white"
+                    className="ml-1 text-lg leading-none text-[#69717c] cursor-pointer transition hover:text-white"
                     aria-label={`Remove ${workout.name}`}
                     onClick={() => onRemove(workout.id)}
                   >
