@@ -10,13 +10,15 @@ type MyPlanProps = {
   workouts?: IWorkout[];
 };
 
+type SortOption = "duration" | "calories";
+
 const MyPlan = ({ workouts = [] }: MyPlanProps) => {
   const router = useRouter();
   const { myPlan, savedWorkouts, setMyPlan, setSavedWorkouts } =
     useContext(WorkoutContext);
 
   const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
-  const [sortBy, setSortBy] = useState("duration");
+  const [sortBy, setSortBy] = useState<SortOption>("duration");
 
   const activeWorkouts = activeTab === "today" ? myPlan : savedWorkouts;
 
@@ -56,13 +58,15 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
   // Sort workouts
   // =========================
   const sortedWorkouts = useMemo(() => {
-    return [...(activeWorkouts ?? [])].sort((a, b) => {
+    const list = [...(activeWorkouts ?? [])];
+
+    return list.sort((a, b) => {
       if (sortBy === "duration") {
-        return b.duration - a.duration;
+        return (b.duration ?? 0) - (a.duration ?? 0);
       }
 
       if (sortBy === "calories") {
-        return b.caloriesBurned - a.caloriesBurned;
+        return (b.caloriesBurned ?? 0) - (a.caloriesBurned ?? 0);
       }
 
       return 0;
@@ -136,7 +140,7 @@ const MyPlan = ({ workouts = [] }: MyPlanProps) => {
 
             <select
               value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
+              onChange={(e) => setSortBy(e.target.value as SortOption)}
               className="h-[31px] rounded-lg border border-[#2a2f38] bg-[#14171c] px-3 text-[11px] text-white outline-none"
             >
               <option value="duration">Duration</option>
