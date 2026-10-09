@@ -1,9 +1,13 @@
-import React from "react";
+'use client';
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
+import { WorkoutContext } from "@/app/context/WorkoutContext";
 
 const Navbar = () => {
+    const { myPlan, savedWorkouts } = useContext(WorkoutContext);
+
     return (
         <header className="sticky top-0 z-50 border-b border-[#1d1e21] bg-[#0d0e10]">
             <nav className="mx-auto flex h-[68px] max-w-[1360px] items-center justify-between px-5">
@@ -46,28 +50,22 @@ const Navbar = () => {
 
                 <div className="hidden items-center gap-5 md:flex">
 
-                    <Link
-                        href="/plan"
-                        className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white"
-                    >
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white">
                         <span>Plan</span>
 
                         <span className="flex h-[17px] min-w-[17px] items-center justify-center rounded-full bg-[#b6ff00] px-1 text-[9px] font-bold text-black">
-                            0
+                            {myPlan.length}
                         </span>
-                    </Link>
+                    </div>
 
 
-                    <Link
-                        href="/saved"
-                        className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white"
-                    >
+                    <div className="flex items-center gap-2 text-[11px] font-medium text-[#b7b8bc] transition hover:text-white" >
                         <span>Saved</span>
 
                         <span className="flex h-[18px] min-w-[18px] items-center justify-center rounded-full border border-[#35383d] px-1 text-[9px] text-[#9b9da2]">
-                            0
+                            {savedWorkouts.length}
                         </span>
-                    </Link>
+                    </div>
 
                 </div>
 

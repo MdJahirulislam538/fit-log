@@ -1,6 +1,7 @@
+import AddPlanButton from '@/app/components/Buttons/AddPlanButton';
 import { IWorkout } from '../../types/workoutstypes';
-import {Bookmark,CalendarPlus} from 'lucide-react';
 import Image from 'next/image';
+import SaveForLater from '@/app/components/Buttons/SaveForLater';
 
 const Page = async ({params}: {params: Promise<{ id: string }>}) => {
   const { id } = await params;
@@ -168,22 +169,10 @@ const Page = async ({params}: {params: Promise<{ id: string }>}) => {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
 
               {/* Add Plan */}
-              <button
-                type="button"
-                className="flex h-11 items-center justify-center gap-2 rounded-lg bg-[#baff00] px-5 text-xs font-bold text-black transition hover:bg-[#c8ff33] active:scale-[0.98]"
-              >
-                <CalendarPlus size={15} />
-                Add to today&apos;s plan
-              </button>
+              <AddPlanButton workout={workout} />
 
               {/* Save */}
-              <button
-                type="button"
-                className="flex h-11 items-center justify-center gap-2 rounded-lg border border-white/15 bg-transparent px-5 text-xs font-medium text-gray-300 transition hover:border-white/30 hover:bg-white/5 active:scale-[0.98]"
-              >
-                <Bookmark size={15} />
-                Save for later
-              </button>
+              <SaveForLater workout={workout} />
 
             </div>
 
